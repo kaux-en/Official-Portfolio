@@ -1,0 +1,82 @@
+/* Projects page */
+
+
+.projectTitles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 3rem;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  z-index: 2; /* above overlay */
+}
+
+.projectPreview {
+  height: 80vh;
+}
+
+.projectSide {
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.projectSide img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.projectSide:hover img {
+  transform: scale(1.05); /* small zoom effect on hover */
+}
+
+.fullProjects {
+  padding: 2rem;
+  text-align: center;
+}
+
+.switchBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.imageContainer:hover img {
+  transform: scale(1.05); /* optional zoom on hover */
+}
+
+/* Overlay layer */
+.imageContainer .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.555); /* semi-transparent black */
+}
+
+.card-img {
+  height: 200px;           /* fixed height */
+  object-fit: cover;        /* crop/fit image without stretching */
+}

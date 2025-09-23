@@ -1,0 +1,55 @@
+/* Hero */
+.heroHeader {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+
+}
+
+.heroTxt {
+  font-size: 30px;
+}
+
+.heroLine {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 4px solid gray; /* this is the line */
+}
+
+/* Character positioning */
+.hero-character {
+  position: absolute;
+  bottom: -28px;         /* sits on the line */
+  width: 100px;
+  transition: left 1s ease-in-out; /* smooth slide when index changes */
+  cursor: pointer;
+}
+
+/* Pages */
+.checkpoints {
+  position: absolute;
+  bottom: -50px; /* place buttons under the line */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.checkpoint {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #333;
+  font-weight: bold;
+}
+
+
+
+
+
+      
