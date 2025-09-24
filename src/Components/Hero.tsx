@@ -10,7 +10,7 @@ function Hero() {
         {name: "Home", position: 0, link: "/" },
         {name: "Projects", position: 25, link: "/projects"},
         {name: "About Me", position: 55, link: "/aboutme"},
-        {name: "Contact", position: 90,  link: "contact"}
+        {name: "Contact", position: 90,  link: "/contact"}
     ]
 
     const [index, setIndex] = useState(0)

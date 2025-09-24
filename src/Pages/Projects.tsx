@@ -7,6 +7,7 @@ import barsOnTap from "../assets/barsOnTap.png"
 import soulRamenChi from "../assets/soulRamenChi.png"
 import eDiscovery from "../assets/eDiscovery.png"
 import azureLogo from "../assets/azureLogo.png"
+import Navigation from "../Components/Navbar"
 
 
 type DeveloperType = {
@@ -39,85 +40,88 @@ function Projects() {
     //tracking which header is being hovered
     const [selected, setSelected] = useState<"developer" | "designer" | null>(null)
 
+                        //argument is 'category' and category can either be 'developer' or 'designer'
     const handleClick = (category: "developer" | "designer") => {
-    setSelected(category)
-  }
+        //toggle on/off
+    setSelected(prev => (prev === category ? null : category))
+  }             //new state depends on old state so 'prev' is previous state value
+                // prev === category checks if the user clicked the same category that’s already selected.
+                //If true → we set the state to null (deselect).
+                //If false → we set the state to category (the new category is now active).
 
   
-    if (selected) {
-        const projects = selected === "developer" ? developerProjects : designerProjects
+    const projects = selected === "developer" ? developerProjects 
+                  : selected === "designer" ? designerProjects 
+                  : []
+
         return (
-        <Container className="fullProjects">
-            <Button className="switchBtn" onClick={() => setSelected(null)}>
-            ← Back
-            </Button>
-            <h2 className="p-3">{selected === "developer" ? "Developer Projects" : "Designer Projects"}</h2>
-            <Row>
-            {projects.map((proj, i) => (
-                <Col md={6} lg={4} key={i} style={{ marginBottom: "2rem" }}>
-                <Card>
-                    <Card.Img variant="top" src={proj.img} className="card-img"/>
-                    <Card.Title className="pt-3">{proj.title}</Card.Title>
-                    <Card.Body className="p-3">
-                    
-                    {selected === "developer" ? (
-                        // Developer buttons
-                        <div className="mt-auto d-flex justify-content-between">
-                       {/* <Button href={(proj as DeveloperType).link} target="_blank">
-                            Take A Look
-                        </Button>
-                        */}
-                        <Button href={(proj as DeveloperType).github} target="_blank">
-                            GitHub
-                        </Button>
+            <div className="projectsPage">
+                 <Container className="Navbox" fluid="sm">
+                    <Navigation />
+                </Container>
+
+                {/* Top Images */}
+                <div>
+                    <Row className="g-0">
+                        <Col
+                        className="projectSide developerSide"
+                        onClick={() => handleClick("developer")}
+                        >
+                        <div className="imageContainer">
+                        <h1 className="projectTitles">The Developer</h1>
+                        <div className="overlay"></div>
+                        <img src={marvelPrev} alt="Developer Preview" />
                         </div>
-                    ) : (
-                        // Designer button
-                        <div className="mt-auto">
-                        <Button href={(proj as DesignerType).caseStudy} target="_blank">
-                            View Case Study
-                        </Button>
+                        </Col>
+
+                        <Col
+                        className="projectSide designerSide"
+                        onClick={() => handleClick("designer")}
+                        >
+                        <div className="imageContainer">
+                        <h1 className="projectTitles">The Designer</h1>
+                        <div className="overlay"></div>
+                        <img src={phonePrev} alt="Designer Preview" />
                         </div>
-                    )}
-
-                    </Card.Body>
-                </Card>
-                </Col>
-            ))}
-            </Row>
-        </Container>
-        )
-    }
-  
-
-    return (
-
-        <Container>
-            <Row>
-                <Col
-                className="projectSide developerSide"
-                onClick={() => handleClick("developer")}
-                >
-                <div className="imageContainer">
-                <h1 className="projectTitles">The Developer</h1>
-                <div className="overlay"></div>
-                <img src={marvelPrev} alt="Developer Preview" />
+                        </Col>
+                    </Row>
                 </div>
-                </Col>
 
-                <Col
-                className="projectSide designerSide"
-                onClick={() => handleClick("designer")}
-                >
-                <div className="imageContainer">
-                <h1 className="projectTitles">The Designer</h1>
-                <div className="overlay"></div>
-                <img src={phonePrev} alt="Designer Preview" />
-                </div>
-                </Col>
-            </Row>
-            
-        </Container>
+                {/* Conditionally render projects section */}
+                {selected && (
+                    <Container className="fullProjects">
+                    <h2 className="p-3">
+                        {selected === "developer" ? "Developer Projects" : "Designer Projects"}
+                    </h2>
+                    <Row>
+                        {projects.map((proj, i) => (
+                        <Col md={6} lg={4} key={i} style={{ marginBottom: "2rem" }}>
+                            <Card>
+                            <Card.Img variant="top" src={proj.img} className="card-img"/>
+                            <Card.Title className="pt-3">{proj.title}</Card.Title>
+                            <Card.Body className="p-3">
+                                {selected === "developer" ? (
+                                <div className="mt-auto d-flex justify-content-between">
+                                    <Button href={(proj as DeveloperType).github} target="_blank">
+                                    GitHub
+                                    </Button>
+                                </div>
+                                ) : (
+                                <div className="mt-auto">
+                                    <Button href={(proj as DesignerType).caseStudy} target="_blank">
+                                    View Case Study
+                                    </Button>
+                                </div>
+                                )}
+                            </Card.Body>
+                            </Card>
+                        </Col>
+                        ))}
+                    </Row>
+                    </Container>
+            )}
+    
+        </div>
     )
 }
 

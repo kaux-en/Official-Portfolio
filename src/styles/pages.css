@@ -1,9 +1,27 @@
+/* NavBar */
+.navbar {
+  background-color: bisque;
+  max-width: 400px; /* won’t stretch too wide */
+  width: 90%; /* takes up 90% of the screen width */
+  height: 40px;
+  border-radius: 20px;
+  margin-top: 15px;
+  margin: 10px auto;
+  display: block;
+  
+  /* justify-content: center; /* centers horizontally */
+  /* align-items: center; /* centers vertically */
+  
+}
+
+.navTxt {
+  margin: 0 10px; /* adds spacing between links */
+}
+
 /* Projects page */
-
-
 .projectTitles {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
@@ -21,12 +39,15 @@
   text-align: center;
   cursor: pointer;
   overflow: hidden;
+  margin: 0;         /* remove extra space */
+  padding-top: 15px;        /* remove padding that causes gaps */
 }
 
 .projectSide img {
   width: 100%;
-  height: 100vh;
-  object-fit: cover;
+  height: 170px;      
+  object-fit: cover;  /* crop nicely without stretching */
+  display: block;     /* removes bottom whitespace */
   transition: transform 0.3s ease;
 }
 
@@ -50,13 +71,13 @@
 .imageContainer {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 170px;
   overflow: hidden;
 }
 
 .imageContainer img {
   width: 100%;
-  height: 100%;
+  height: 85%;
   object-fit: cover;
   display: block;
   transition: transform 0.3s ease;
@@ -72,11 +93,53 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.555); /* semi-transparent black */
+  height: 85%;
+  background-color: rgba(0, 0, 0, 0.672); /* semi-transparent black */
 }
 
 .card-img {
   height: 200px;           /* fixed height */
   object-fit: cover;        /* crop/fit image without stretching */
+}
+
+
+/*
+.projectsPage {
+  background-image: url("../assets/sitting.png");
+}
+  */
+
+/* About Me */
+.profileContainer {
+  position: relative;    /* needed for absolute positioning of small image */
+  width: 100%;           /* container spans full width */
+}
+
+.customProfile {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+  border-radius: 35px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
+.headshot {
+  width: auto;
+  height: 50%;
+  position: absolute;    /* layer on top */
+  left: 10%;               /* align to left of container */
+  bottom: -20%;
+  box-shadow: 0 7px 10px rgba(0,0,0,0.3); 
+  border-radius: 20%;
+}
+
+.aboutmeTitle {
+  text-align: center;
+  padding: 10px;
+  padding-top: 20px;
+}
+
+.aboutmeTxt {
+  margin-top: 150px;
 }
