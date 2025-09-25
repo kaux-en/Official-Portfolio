@@ -9,9 +9,9 @@ function Navigation () {
                 <Container>
                     <Nav>
                         <NavLink className="navTxt" href="/">Home</NavLink>
-                        <NavLink className="navTxt" href="/projects">Projects</NavLink>
-                        <NavLink className="navTxt" href="/aboutme">About Me</NavLink>
-                        <NavLink className="navTxt" href="/contact">Contact</NavLink>
+                        <NavLink className="navTxt" href="/projects">See My Work</NavLink>
+                        <NavLink className="navTxt" href="/aboutme">About</NavLink>
+                        <NavLink className="navTxt" href="/contact">Work With Me</NavLink>
                     </Nav>
                 </Container>
             </Navbar>

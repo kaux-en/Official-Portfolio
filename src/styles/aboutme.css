@@ -1,0 +1,49 @@
+/* About Me */
+.profileContainer {
+  position: relative;    /* needed for absolute positioning of small image */
+  width: 100%;           /* container spans full width */
+}
+
+.customProfile {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+  border-radius: 35px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
+.headshot {
+  width: auto;
+  height: 50%;
+  position: absolute;    /* layer on top */
+  left: 10%;               /* align to left of container */
+  bottom: -20%;
+  box-shadow: 0 7px 10px rgba(0,0,0,0.3); 
+  border-radius: 20%;
+}
+
+.aboutmeTitle {
+  text-align: center;
+  padding: 10px;
+  padding-top: 20px;
+}
+
+.aboutmeTxt {
+  margin-top: 150px;
+}
+
+.jobFocusedTxt {
+    padding-top: 80px;
+}
+
+.jobFocusedCol {
+    height: 200px;
+    border: rgb(142, 142, 142) 2px outset;
+    /* box-shadow: 0 3px 7px rgba(0,0,0,0.3); */
+    margin: 8px;
+}
+
+.freelanceSection {
+    margin-top: 95px;
+}

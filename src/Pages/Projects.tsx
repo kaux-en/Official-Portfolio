@@ -19,6 +19,7 @@ type DeveloperType = {
 
 type DesignerType = {
     title: string,
+    extra: string
     img: string,
     caseStudy: string
 }
@@ -31,16 +32,16 @@ const developerProjects = [
 ]
 
 const designerProjects = [
-  { title: "Qualifly", img: phonePrev, caseStudy: "/" },
-  { title: "Bars On Tap", img: barsOnTap, caseStudy: "https://docs.google.com/presentation/d/1LrwEMhk5egHp5h9lQVK0bDzHJ9Bc3_VmRlp11gsGfhI/edit?usp=sharing" },
-  { title: "Soul Ramen Chi", img: soulRamenChi, caseStudy: "#"}
+  { title: "Qualifly", extra: '- Concept', img: phonePrev, caseStudy: "/" },
+  { title: "Bars On Tap", extra: '- Concept', img: barsOnTap, caseStudy: "https://docs.google.com/presentation/d/1LrwEMhk5egHp5h9lQVK0bDzHJ9Bc3_VmRlp11gsGfhI/edit?usp=sharing" },
+  { title: "Soul Ramen Chi", extra: '- Client Work', img: soulRamenChi, caseStudy: "#"}
 ]
 
 function Projects() {
     //tracking which header is being hovered
     const [selected, setSelected] = useState<"developer" | "designer" | null>(null)
 
-                        //argument is 'category' and category can either be 'developer' or 'designer'
+        //argument is 'category' and category can either be 'developer' or 'designer'
     const handleClick = (category: "developer" | "designer") => {
         //toggle on/off
     setSelected(prev => (prev === category ? null : category))
@@ -54,6 +55,7 @@ function Projects() {
                   : selected === "designer" ? designerProjects 
                   : []
 
+
         return (
             <div className="projectsPage">
                  <Container className="Navbox" fluid="sm">
@@ -62,10 +64,10 @@ function Projects() {
 
                 {/* Top Images */}
                 <div>
-                    <Row className="g-0">
+                    <Row className='g-0'>
                         <Col
                         className="projectSide developerSide"
-                        onClick={() => handleClick("developer")}
+                        onClick={() => handleClick('developer')}
                         >
                         <div className="imageContainer">
                         <h1 className="projectTitles">The Developer</h1>
@@ -76,7 +78,7 @@ function Projects() {
 
                         <Col
                         className="projectSide designerSide"
-                        onClick={() => handleClick("designer")}
+                        onClick={() => handleClick('designer')}
                         >
                         <div className="imageContainer">
                         <h1 className="projectTitles">The Designer</h1>
@@ -84,6 +86,7 @@ function Projects() {
                         <img src={phonePrev} alt="Designer Preview" />
                         </div>
                         </Col>
+
                     </Row>
                 </div>
 
@@ -98,7 +101,12 @@ function Projects() {
                         <Col md={6} lg={4} key={i} style={{ marginBottom: "2rem" }}>
                             <Card>
                             <Card.Img variant="top" src={proj.img} className="card-img"/>
-                            <Card.Title className="pt-3">{proj.title}</Card.Title>
+                            <Card.Title className="pt-3">
+                                {proj.title}
+                                {selected === "designer" && (proj as DesignerType).extra && (
+                                    <span className="extraTxt"> {(proj as DesignerType).extra}</span>
+                                )}
+                            </Card.Title>
                             <Card.Body className="p-3">
                                 {selected === "developer" ? (
                                 <div className="mt-auto d-flex justify-content-between">

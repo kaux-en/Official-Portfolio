@@ -1,0 +1,27 @@
+/* Contact */
+.form {
+  width: 50%;
+  height: 50%;
+  margin: auto;
+}
+
+/* Resume */
+.resumeTxt {
+    margin-top: 110px;
+    padding-left: 50px;
+}
+
+.resumeLink {
+  text-decoration: none;
+  color: inherit; /* Inherit color from parent */
+  cursor: pointer; /* Change cursor to default pointer */
+  padding: 8px 16px;
+  border-radius: 7px;
+  background-color: #ffb300;
+  padding-top: 10px;
+}
+
+.resumeContainer {
+  margin-top: 30px;
+  margin-bottom: 30px;
+} 
