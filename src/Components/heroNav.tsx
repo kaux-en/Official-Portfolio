@@ -1,10 +1,12 @@
 import { Container } from "react-bootstrap"
 import sitting from "../assets/sitting.png"
 import walking from "../assets/walking.png"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-const Hero: React.FC = () => {
+
+
+function Hero() {
 
     const checkpoints = [
         {name: "Home", position: 0, link: "/" },
@@ -16,19 +18,7 @@ const Hero: React.FC = () => {
     const [index, setIndex] = useState(0)
     const [hovered, setHovered] = useState(false)
     const navigate = useNavigate()
-    const [visible, setVisible] = useState(false)
-
-    useEffect(() => {
-
-        setVisible(true) //set it as visible when component mounts
-
-        // interval to toggle visibility
-        const interval = setInterval(() => {
-            setVisible((prev) => !prev);
-        }, 4000); // every 4 seconds toggle 
-
-        return () => clearInterval(interval) //cleanup
-    }, [])
+   
 
     const handleHover = (i: number) => {
     setHovered(true)
@@ -47,14 +37,9 @@ const Hero: React.FC = () => {
     return (
 
         <div>
-            <Container className="heroLine">
-                <h1 className="heroHeader">Oh Hi! I'm Kiara</h1>
-                    <div className={`fade-text ${visible ? "show" : ""}`}>
-                        UX Engineer
-                    </div>
-                <p className="heroTxt">Let's take a walk</p>
 
             {/* Character */}
+            <Container className="heroLine">
             <img
                 src={hovered ? walking : sitting }
                 alt="Character"

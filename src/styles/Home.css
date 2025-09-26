@@ -1,10 +1,19 @@
 /* Hero */
 
+.homeTxt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 65vh;
+}
+
 .heroHeader {
   font-size: 3rem;
   font-weight: bold;
   margin: 0;
-
+  
 }
 
 .heroTxt {
@@ -13,12 +22,13 @@
 
 .heroLine {
   position: relative;
-  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-bottom: 4px solid gray; /* this is the line */
+  border-bottom: hidden; /* this is the line */
+  margin-top: 15vh;
+  z-index: 1000;
 }
 
 /* Character positioning */
@@ -49,27 +59,6 @@
   font-weight: bold;
 }
 
-
-/* NavBar */
-.navbar {
-  background-color: bisque;
-  max-width: 455px; /* won’t stretch too wide */
-  width: 90%; /* takes up 90% of the screen width */
-  height: 40px;
-  border-radius: 20px;
-  margin-top: 15px;
-  margin: 10px auto;
-  display: block;
-  
-  /* justify-content: center; /* centers horizontally */
-  /* align-items: center; /* centers vertically */
-  
-}
-
-.navTxt {
-  margin: 0 10px; /* adds spacing between links */
-}  
-
 .fade-text {
   opacity: 0;
   transition: opacity 0.8s ease;
@@ -78,6 +67,33 @@
 .fade-text.show {
   opacity: 1;
 }
+
+
+/* NavBar */
+/*
+.navbar {
+  background-color: bisque;
+  max-width: 455px;  won’t stretch too wide 
+  width: 90%;  takes up 90% of the screen width 
+  height: 40px;
+  border-radius: 20px;
+  margin-top: 15px;
+  margin: 10px auto;
+  display: block;
+  position: fixed;
+  bottom: 0;
+  
+   justify-content: center;  centers horizontally 
+   align-items: center; centers vertically 
+  
+}
+
+.navTxt {
+  margin: 0 10px; /* adds spacing between links */
+
+
+
+
 
 
 

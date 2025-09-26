@@ -1,4 +1,4 @@
-import Hero from './Components/Hero'
+import Hompage from './Components/Homepage'
 import '../src/styles/Home.css'
 import '../src/styles/aboutme.css'
 import '../src/styles/projects.css'
@@ -15,7 +15,7 @@ function Home() {
   return (
     <>
       <Routes>
-        <Route path='/' element = {<Hero />} />
+        <Route path='/' element = {<Hompage />} />
         <Route path='/projects' element = {<Projects />} />
         <Route path='/contact' element = {<Contact />} /> 
         <Route path='/aboutme' element = {<About_Me />} />

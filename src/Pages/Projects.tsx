@@ -7,7 +7,7 @@ import barsOnTap from "../assets/barsOnTap.png"
 import soulRamenChi from "../assets/soulRamenChi.png"
 import eDiscovery from "../assets/eDiscovery.png"
 import azureLogo from "../assets/azureLogo.png"
-import Navigation from "../Components/Navbar"
+import Hero from "../Components/heroNav"
 
 
 type DeveloperType = {
@@ -56,39 +56,38 @@ function Projects() {
                   : []
 
 
-        return (
-            <div className="projectsPage">
-                 <Container className="Navbox" fluid="sm">
-                    <Navigation />
-                </Container>
+        return ( 
+            <div>
 
                 {/* Top Images */}
                 <div>
                     <Row className='g-0'>
                         <Col
-                        className="projectSide developerSide"
-                        onClick={() => handleClick('developer')}
-                        >
-                        <div className="imageContainer">
-                        <h1 className="projectTitles">The Developer</h1>
-                        <div className="overlay"></div>
-                        <img src={marvelPrev} alt="Developer Preview" />
-                        </div>
-                        </Col>
-
-                        <Col
                         className="projectSide designerSide"
                         onClick={() => handleClick('designer')}
                         >
                         <div className="imageContainer">
-                        <h1 className="projectTitles">The Designer</h1>
+                        <h1 className="projectTitles">Designing What You See</h1>
                         <div className="overlay"></div>
                         <img src={phonePrev} alt="Designer Preview" />
                         </div>
                         </Col>
 
+                        <Col
+                        className="projectSide developerSide"
+                        onClick={() => handleClick('developer')}
+                        >
+                        <div className="imageContainer">
+                        <h1 className="projectTitles">Engineering How It Works</h1>
+                        <div className="overlay"></div>
+                        <img src={marvelPrev} alt="Developer Preview" />
+                        </div>
+                        </Col>
+
                     </Row>
                 </div>
+
+                <Hero />
 
                 {/* Conditionally render projects section */}
                 {selected && (

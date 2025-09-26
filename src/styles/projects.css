@@ -1,11 +1,12 @@
 /* Projects page */
+
 .projectTitles {
   position: absolute;
-  top: 40%;
+  top: 18%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 3rem;
+  font-size: 2rem;
   text-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
   z-index: 2; /* above overlay */
 }
@@ -39,6 +40,7 @@
 .fullProjects {
   padding: 2rem;
   text-align: center;
+  margin-top: 25vh;
 }
 
 .switchBtn {
@@ -54,6 +56,7 @@
   width: 100%;
   height: 170px;
   overflow: hidden;
+  margin-top: 10px;
 }
 
 .imageContainer img {

@@ -1,4 +1,4 @@
-import Navigation from "../Components/Navbar"
+import Hero from "../Components/heroNav";
 import { useState, type FormEvent } from "react"
 import { Form, Button } from "react-bootstrap";
 
@@ -31,9 +31,9 @@ const Contact: React.FC = () => {
 
     return (
         <>
-        <Navigation />
+        <Hero />
 
-        <h2>Services I Offer</h2>
+        <h1>Services I Offer</h1>
             <ul>
                 <li>Frontend Development (React, Typescript, responsive Design)</li>
                 <li>UX & UI Design (wireframes, prototypes, design systems)</li>
@@ -41,11 +41,13 @@ const Contact: React.FC = () => {
                 <li>Starter Website Bundle (branding + setup + launch)</li>
                 <li>Ongoing Support (maintenance & updates)</li>
             </ul>
+            <div className="linkPackages">
             <a  href="/Packages.pdf"
                 download="Kiara_Anderson_Packages.pdf"
             >
                 See Packages
             </a>
+            </div>
             
             <div className="resumeTxt">
                 <p>Skip introductions & download my resume</p>
@@ -79,6 +81,7 @@ const Contact: React.FC = () => {
                     Submit
                 </Button>
             </Form>
+
         </>
     )
 }

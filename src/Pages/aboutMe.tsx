@@ -1,4 +1,4 @@
-import Navigation from "../Components/Navbar"
+import Hero from "../Components/heroNav"
 import profile from "../assets/customProfile.jpg"
 import headshot from "../assets/headShot.jpg"
 import { Container, Row, Col } from "react-bootstrap"
@@ -8,23 +8,22 @@ function About_Me () {
 
     return (
         <>
-            <Navigation />
-            <h2 className="aboutmeTitle">You found me!</h2>
+            <Hero />
 
             <div className="profileContainer">
                 <img src={profile} alt="custom profile picture" className="customProfile"/>
                 <img src={headshot} alt="headshot profile picture" className="headshot" />
             </div>
 
-            <Container className="aboutmeTxt">
-                <p>I consider myself a <strong>User Experience Engineer</strong>. Which is just a fancy way to say, I design the interface you see and bring it to life.</p>
+
+            <Container>
 
                 <Row className="jobFocusedTxt">
                     <Col className="jobFocusedCol">
                         <p>Teamwork</p>
                     </Col>
-                    <Col className="jobFocusedCol">
-                        <p>Tech Stack</p>
+                    <Col className="aboutmeTitle">
+                        <h2>I consider myself a <strong>User Experience Engineer</strong>. Which is just a fancy way to say, I design the interface you see and bring it to life.</h2>
                     </Col>
                     <Col className="jobFocusedCol">
                         <p>Design/Dev balance</p>
