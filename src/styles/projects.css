@@ -1,6 +1,6 @@
 /* Projects page */
 
-.projectTitles {
+.imageTitles {
   position: absolute;
   top: 18%;
   left: 50%;
@@ -37,12 +37,6 @@
   transform: scale(1.05); /* small zoom effect on hover */
 }
 
-.fullProjects {
-  padding: 2rem;
-  text-align: center;
-  margin-top: 25vh;
-}
-
 .switchBtn {
   position: absolute;
   top: 1rem;
@@ -51,12 +45,13 @@
   cursor: pointer;
 }
 
+/* image headers */
 .imageContainer {
   position: relative;
   width: 100%;
   height: 170px;
   overflow: hidden;
-  margin-top: 10px;
+  margin-top: 10vh;
 }
 
 .imageContainer img {
@@ -81,6 +76,21 @@
   background-color: rgba(0, 0, 0, 0.672); /* semi-transparent black */
 }
 
+/* Projects */
+.subjectTitles {
+  padding-bottom: 10vh;
+}
+
+.fullProjects {
+  text-align: center;
+  margin-top: 5vh;
+}
+
+.card-Border {
+  border-color: rgb(230, 222, 212) !important;
+}
+
+
 .card-img {
   height: 200px;           /* fixed height */
   object-fit: cover;        /* crop/fit image without stretching */
@@ -89,4 +99,53 @@
 .extraTxt {
     color: rgb(143, 143, 143);
     font-size: 16px;
+}
+
+.envelope {
+  width: 80px;
+  height: 40px;
+  padding-right: 12px;
+}
+
+.letterlink {
+  display: block;
+  text-decoration: none;
+  padding-top: 20px;
+  color: rgb(178, 100, 5);
+}
+
+.letterlink:hover {
+  display: block;
+  text-decoration: none;
+  padding-top: 20px;
+  color: rgb(245, 182, 105);
+}
+
+/* Designer side */
+.designer-title {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+.designer-img{
+  width: 60%;
+  height: 60%;
+}
+
+.designer-btn {
+  background-color: rgb(247, 228, 199) !important;
+  border-color: rgb(252, 232, 208) !important;
+  color: rgb(59, 21, 0) !important;
+}
+
+.designer-btn:hover {
+  background-color: rgb(178, 116, 84) !important;
+  border-color: rgb(206, 158, 110) !important;
+  color: rgb(255, 250, 250) !important;
+  
+  /*
+  background-color: white !important;
+  border-color: rgb(253, 181, 73) !important;
+  color: rgb(244, 180, 83) !important;
+  */
 }

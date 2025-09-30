@@ -1,12 +1,12 @@
 import { Container, Row, Col, Button, Card } from "react-bootstrap"
 import { useState } from "react"
-import marvelPrev from "../assets/marvelPrev.png"
-import streamSearchPrev from "../assets/streamSearchPrev.png"
-import phonePrev from "../assets/phonePrev.png"
-import barsOnTap from "../assets/barsOnTap.png"
-import soulRamenChi from "../assets/soulRamenChi.png"
-import eDiscovery from "../assets/eDiscovery.png"
-import azureLogo from "../assets/azureLogo.png"
+import marvelPrev from "../assets/ProjectPreviews/marvelPrev.png"
+import streamSearchPrev from "../assets/ProjectPreviews/streamSearchPrev.png"
+import phonePrev from "../assets/ProjectPreviews/dashboardQualifly.png"
+import barsOnTap from "../assets/ProjectPreviews/barsOnTap.png"
+import soulRamenChi from "../assets/ProjectPreviews/soulramenLaptop.png"
+import eDiscovery from "../assets/ProjectPreviews/eDiscovery.png"
+import azureLogo from "../assets/ProjectPreviews/azureLogo.png"
 import Hero from "../Components/heroNav"
 
 
@@ -22,6 +22,7 @@ type DesignerType = {
     extra: string
     img: string,
     caseStudy: string
+    misc: string
 }
 
 const developerProjects = [
@@ -32,9 +33,9 @@ const developerProjects = [
 ]
 
 const designerProjects = [
-  { title: "Qualifly", extra: '- Concept', img: phonePrev, caseStudy: "/" },
-  { title: "Bars On Tap", extra: '- Concept', img: barsOnTap, caseStudy: "https://docs.google.com/presentation/d/1LrwEMhk5egHp5h9lQVK0bDzHJ9Bc3_VmRlp11gsGfhI/edit?usp=sharing" },
-  { title: "Soul Ramen Chi", extra: '- Client Work', img: soulRamenChi, caseStudy: "#"}
+  { title: "Qualifly", extra: '- Concept', img: phonePrev, caseStudy: "/Onboarding_Mobile_App.pdf" },
+  { title: "Soul Ramen Chi", extra: '- Client Work', img: soulRamenChi, caseStudy: "/casestudy.pdf", misc: "/Copy_of_Letter_of_Recommendation.pdf" },
+  { title: "Bars On Tap", extra: '- Concept', img: barsOnTap, caseStudy: "/Case_Study_Bars;OnTap-2.pdf" }
 ]
 
 function Projects() {
@@ -59,6 +60,7 @@ function Projects() {
         return ( 
             <div>
 
+                <Hero />
                 {/* Top Images */}
                 <div>
                     <Row className='g-0'>
@@ -67,9 +69,9 @@ function Projects() {
                         onClick={() => handleClick('designer')}
                         >
                         <div className="imageContainer">
-                        <h1 className="projectTitles">Designing What You See</h1>
-                        <div className="overlay"></div>
-                        <img src={phonePrev} alt="Designer Preview" />
+                            <h1 className="imageTitles">Designing What You See</h1>
+                                <div className="overlay"></div>
+                                    <img src={phonePrev} alt="Designer Preview" />
                         </div>
                         </Col>
 
@@ -78,54 +80,74 @@ function Projects() {
                         onClick={() => handleClick('developer')}
                         >
                         <div className="imageContainer">
-                        <h1 className="projectTitles">Engineering How It Works</h1>
-                        <div className="overlay"></div>
-                        <img src={marvelPrev} alt="Developer Preview" />
+                            <h1 className="imageTitles">Engineering How It Works</h1>
+                                <div className="overlay"></div>
+                                    <img src={marvelPrev} alt="Developer Preview" />
                         </div>
                         </Col>
 
                     </Row>
                 </div>
 
-                <Hero />
 
                 {/* Conditionally render projects section */}
                 {selected && (
                     <Container className="fullProjects">
-                    <h2 className="p-3">
+                    <h2 className="subjectTitles">
                         {selected === "developer" ? "Developer Projects" : "Designer Projects"}
                     </h2>
+
                     <Row>
                         {projects.map((proj, i) => (
-                        <Col md={6} lg={4} key={i} style={{ marginBottom: "2rem" }}>
-                            <Card>
-                            <Card.Img variant="top" src={proj.img} className="card-img"/>
-                            <Card.Title className="pt-3">
-                                {proj.title}
-                                {selected === "designer" && (proj as DesignerType).extra && (
-                                    <span className="extraTxt"> {(proj as DesignerType).extra}</span>
-                                )}
-                            </Card.Title>
-                            <Card.Body className="p-3">
-                                {selected === "developer" ? (
-                                <div className="mt-auto d-flex justify-content-between">
-                                    <Button href={(proj as DeveloperType).github} target="_blank">
-                                    GitHub
+                            <Col md={6} lg={4} key={i} style={{ marginBottom: "2rem" }}>
+                            {selected === "designer" ? (
+                                // Designer project layout
+                                <div className="designer-card">
+                                <img src={proj.img} alt={proj.title} className="designer-img" />
+                                <div className="designer-overlay">
+                                    <h5 className="designer-title"> 
+                                    {proj.title}
+                                    {(proj as DesignerType).extra && (
+                                        <span className="extraTxt"> {(proj as DesignerType).extra}</span>
+                                    )}
+                                    </h5>
+                                    <Button
+                                    href={(proj as DesignerType).caseStudy}
+                                    target="_blank"
+                                    className="designer-btn"
+                                    >
+                                    Case Study
                                     </Button>
+                                    {(proj as DesignerType).misc && (
+                                        <a
+                                            href={(proj as DesignerType).misc}
+                                            download="Kiara_Anderson_Letter_Of_Recommendation.pdf"
+                                            className="letterlink"
+                                        >
+                                            Soul Ramen Recommendation Letter
+                                        </a>
+                                    )}
                                 </div>
-                                ) : (
-                                <div className="mt-auto">
-                                    <Button href={(proj as DesignerType).caseStudy} target="_blank">
-                                    View Case Study
+                                </div>
+                            ) : (
+                                // Developer project layout (keep card)
+                                <Card className="card-Border">
+                                <Card.Img variant="top" src={proj.img} className="card-img"/>
+                                <Card.Title className="pt-3">{proj.title}</Card.Title>
+                                <Card.Body className="p-3">
+                                    <div className="mt-auto d-flex justify-content-center">
+                                    <Button href={(proj as DeveloperType).github} target="_blank" className="designer-btn">
+                                        GitHub
                                     </Button>
-                                </div>
-                                )}
-                            </Card.Body>
-                            </Card>
-                        </Col>
+                                    </div>
+                                </Card.Body>
+                                </Card>
+                            )}
+                            </Col>
                         ))}
                     </Row>
-                    </Container>
+
+                </Container>
             )}
     
         </div>
@@ -133,3 +155,17 @@ function Projects() {
 }
 
 export default Projects
+
+
+/* 
+<Row sm={3} md={5}>
+                                        <Col className="letterCol">
+                                            <img 
+                                                src="src/assets/ProjectPreviews/envelope.png" 
+                                                alt="envelope" 
+                                                className="envelope"
+                                            />
+                                            
+                                        </Col>
+                                    </Row>
+                                    */

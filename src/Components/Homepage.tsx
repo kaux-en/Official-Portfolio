@@ -14,7 +14,7 @@ const Hompage: React.FC = () => {
             // interval to toggle visibility
             const interval = setInterval(() => {
                 setVisible((prev) => !prev);
-            }, 4000); // every 4 seconds toggle 
+            }, 3000); // every 3 seconds toggle 
     
             return () => clearInterval(interval) //cleanup
         }, [])

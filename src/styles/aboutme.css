@@ -11,7 +11,7 @@
   display: block;
   margin: auto;
   border-radius: 35px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  /*box-shadow: 0 3px 6px rgba(0,0,0,0.3); */
   margin-top: 10px;
 }
 
@@ -33,17 +33,38 @@
 
 
 .jobFocusedTxt {
-    padding-top: 40vh;
+    padding-top: 30vh;
 }
     
 
 .jobFocusedCol {
     height: 200px;
-    border: rgb(142, 142, 142) 2px outset;
+    /*border: rgb(142, 142, 142) 2px outset;
     /* box-shadow: 0 3px 7px rgba(0,0,0,0.3); */
     margin: 8px;
+    text-align: center;
+}
+
+.quoteTop {
+  font-size: 90px;
+  color: rgb(135, 134, 134);
+}
+
+.quoteBottom {
+  font-size: 90px;
+  text-align: right;
+  color: rgb(135, 134, 134);
+}
+
+h3, h5 {
+  text-align: center;
 }
 
 .freelanceSection {
-    margin-top: 95px;
+  margin-top: -5vh;
+}
+
+.processPar {
+  text-align: center;
+  padding-top: 15px;
 }

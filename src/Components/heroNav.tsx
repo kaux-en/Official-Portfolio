@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap"
-import sitting from "../assets/sitting.png"
-import walking from "../assets/walking.png"
+import sitting from "../assets/navBarChar/sitting.png"
+import walking from "../assets/navBarChar/walking.png"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
