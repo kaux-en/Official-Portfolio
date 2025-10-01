@@ -33,7 +33,7 @@
 
 
 .jobFocusedTxt {
-    padding-top: 30vh;
+    padding-top: 25vh;
 }
     
 
@@ -56,12 +56,27 @@
   color: rgb(135, 134, 134);
 }
 
+@media (max-width: 768px) {
+  .quoteTop, .quoteBottom {
+    font-size: 45px;
+  }
+  .freelanceSection {
+    padding-top: 4rem;
+  }
+}
+
+@media (max-width: 950px) {
+  .quoteBottom {
+    padding-top: 5rem;
+  }
+}
+
 h3, h5 {
   text-align: center;
 }
 
 .freelanceSection {
-  margin-top: -5vh;
+  display: block;
 }
 
 .processPar {

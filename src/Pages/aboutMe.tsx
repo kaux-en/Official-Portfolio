@@ -32,7 +32,7 @@ function About_Me () {
                     <p className="quoteBottom">"</p>
                 </Row>
 
-                <div className="freelanceSection">
+                <Row className="freelanceSection">
                     <h3>How I Work: </h3>
                     <h5><em>Discover | Design | Deliver</em></h5>
                     <div className="processPar">
@@ -43,7 +43,7 @@ function About_Me () {
                         <p>The delivery phase is often the most time-intensive, as it’s where ideas and planning are transformed into a polished, functional product. Throughout this stage, I keep communication open so you always feel confident in the progress being made.
                         </p>
                     </div>
-                </div>
+                </Row>
             </Container>
 
         </>
